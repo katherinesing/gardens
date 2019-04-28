@@ -39,8 +39,8 @@ class CropsController extends Controller
 
         
         $validation = Validator::make($input, [
-            'title' => 'required|min:3',
-            'description' => 'required|min:3'
+            'title' => 'required|min:3|max:30',
+            'description' => 'required|min:3|max:100'
         ]);
         //otherwise insert the playlist into the db
 

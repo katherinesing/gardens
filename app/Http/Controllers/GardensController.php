@@ -33,6 +33,9 @@ class GardensController extends Controller
     	->where('gardens.garden_id', '=', $garden_id)
     	->get();
 
+        $leaders = DB::table('users')
+        ->where('users.garden_id', '=', $garden_id)
+        ->get();
     	// $crops = DB::table('crops')
     	// ->where('crops.garden_id', '=', $garden_id)
      //    ->orderBy('status', 'desc')
@@ -61,7 +64,8 @@ class GardensController extends Controller
     		'crops' => $crops,
             'harvest_crops' => $harvest_crops,
             'growing_crops' => $growing_crops,
-            'new_crops' => $new_crops
+            'new_crops' => $new_crops,
+            'leaders' => $leaders
     	]);
     }
     public function create(){
@@ -70,8 +74,8 @@ class GardensController extends Controller
     public function store(Request $request){
         $input = $request->all();
         $validation = Validator::make($input, [
-            'name' => 'required|min:5|unique:gardens',
-            'address' => 'required|min:5|unique:gardens'
+            'name' => 'required|min:5|max:100|unique:gardens',
+            'address' => 'required|min:5|max:300|unique:gardens'
         ]);
         //otherwise insert the playlist into the db
 

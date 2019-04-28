@@ -60,6 +60,18 @@
 	@if (Auth::check()) 
 		<a href="/gardens/{{$garden->first()->garden_id}}/create">Add a new crop</a>
 	@endif
-	
+	<br><br>
+
+	<h3>Lead Farmers/Coordinators:</h3>
+	<ul>
+		@forelse($leaders as $leader)
+			
+			<li>
+				{{$leader->name}} -- <a href = "mailto: {{$leader->email}}">{{$leader->email}}</a>
+			</li>
+		@empty
+			<li>No coordinators.</li>
+		@endforelse
+	</ul>
 </div>
 @endsection

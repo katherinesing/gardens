@@ -14,6 +14,6 @@
 		<li>See <a href="gardens">gardens</a></li>
 		<li>To volunteer or donate, please <a href="contact">contact us</a>!</li>
 	</ul>
-	<h3>Note: This is a student project and is not meant for real use. Any information on this website may not be accurate.</h3>
+	<h5>Note: This is a student project and is not meant for real use. Any information on this website may not be accurate.</h5>
 </div>
 @endsection
