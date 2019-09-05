@@ -1,3 +1,4 @@
+See GreenGarden: http://ksing-gardens.herokuapp.com/
 ### Project Idea:
 Community Gardens
 App to keep track of garden information, contact info, and crop updates so that people know where a crop is ready to harvest
